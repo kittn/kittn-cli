@@ -1,5 +1,23 @@
 #!/usr/bin/env node
 
+var figlet = require('figlet');
+var chalk = require('chalk');
+var clear = require('clear');
+
+var logo = figlet.textSync('kittn', {
+  font: 'Isometric3',
+  horizontalLayout: 'default',
+  verticalLayout: 'default',
+  kerning: 'fitted'
+});
+
+// Clear Terminal
+clear(); 
+
+// Render Logo
+console.log(chalk.cyan(logo))
+
+// Default Commands
 require('commander')
   .version(require('../package').version)
   .usage('<command> [options]')
